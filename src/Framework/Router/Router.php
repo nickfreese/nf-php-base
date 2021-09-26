@@ -12,11 +12,12 @@ class Router {
 
     function __construct(
         \src\Framework\Request\Cli $cliRequest,
-        \src\Framework\Request\Cli $webRequest,
+        \src\Framework\Request\Web $webRequest,
         $config,
         $env
 	){
         $this->cliRequest = $cliRequest;
+        $this->webRequest = $webRequest;
         $this->config = $config;
         $this->env = $env;
 	}
@@ -100,7 +101,9 @@ class Router {
             $this->appUser = "web";
 
             $area = $this->webRequest->getRequestArea();
+
             $command = $this->webRequest->getRequestCommand();
+
 
             if( $area && $command){
 

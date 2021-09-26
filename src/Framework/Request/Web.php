@@ -23,8 +23,9 @@ class Web {
     public function getRequestArea(){
 
         $parts = explode("/",$this->getRequestUri());
-        if(isset($parts[0])){
-            return $parts[0];
+        //var_dump($parts);
+        if(isset($parts[1])){
+            return $parts[1];
         }
 
     }
@@ -33,16 +34,25 @@ class Web {
     {
 
         $parts = explode("/",$this->getRequestUri());
-        if(isset($parts[1])){
-            return $parts[1];
+        if(isset($parts[2])){
+            return $parts[2];
         }
 
     }
 
     private function getRequestUri()
     {
-        $url = explode('?', $_SERVER['REQUEST_URI'], 2);;
-        return $url;
+
+        if (!isset($this->uriString)) {
+
+            $url = explode('?', $_SERVER['REQUEST_URI'], 2);
+            $this->uriString = $url[0];
+            return $this->uriString;
+
+        } else {
+            return $this->uriString;
+        }
+        
 
     }
 

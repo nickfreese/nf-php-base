@@ -9,6 +9,9 @@ date_default_timezone_set("America/New_York");
 
 $config = require_once(dirname(__FILE__) .'/etc/config.php');
 $env = require_once(dirname(__FILE__) .'/etc/env.php');
+if (!isset($argv)) {
+  $argv = [];
+}
 $env['argv'] = $argv;
 define('APP_DIR',$env['system']['appDir']);
 

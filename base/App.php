@@ -27,7 +27,7 @@ class App {
 	}
 
     public function run(){
-        $this->test->run();
+       // $this->test->run();
 
         $this->debug->catch("Argv: " . implode(" ",$this->env['argv']));
 
