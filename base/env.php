@@ -3,6 +3,7 @@
 return array(
     
     "mode"=>"DEV",
+    "devurl"=>"http://localhost/",
     "db"=>array(
         "host"=>"localhost",
         "dbname"=>"testdb",

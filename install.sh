@@ -8,6 +8,7 @@
 mkdir bin
 mkdir pub/media
 mkdir src/App
+mkdir var
 
 cp base/docker-compose.yml docker-compose.yml
 cp base/run.sh run.sh

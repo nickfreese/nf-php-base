@@ -34,9 +34,13 @@ class App {
         $routeIsReady = $this->router->routeWork();
         if($routeIsReady){
 
-            $this->router->doAction();
+            $response = $this->router->doAction();
 
-            $this->router->doResponse();
+            if (!$response) {
+                $response = null;
+            }
+
+            $this->router->doResponse($response);
 
         } else {
 

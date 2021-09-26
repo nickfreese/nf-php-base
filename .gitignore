@@ -13,4 +13,5 @@ bin/app.php
 pub/media/app.js
 pub/index.php
 src/App/*
+var/*
 

@@ -31,14 +31,14 @@ class Router {
 
         $route = $this->getRoute();
 
-        echo "route: " . $route . "\n";
+        //echo "route: " . $route . "\n";
 
         if(isset($routes->{$route})){
             $this->routeConfig = $routes->{$route};
 
             return true;
         } else {
-            echo "no such route";
+            //echo "no such route";
 
             return false;
         }
@@ -52,17 +52,17 @@ class Router {
         $objectManager = new \src\Framework\ObjectManager($this->config, $this->env);
         $action = $objectManager->getClass($this->routeConfig->action);
 
-        $action->execute();
+        return $action->execute();
 
     }
 
-    public function doResponse()
+    public function doResponse($data = null)
     {
 
         $objectManager = new \src\Framework\ObjectManager($this->config, $this->env);
         $response = $objectManager->getClass($this->routeConfig->response);
 
-        $response->execute();
+        $response->execute($data);
 
     }
 

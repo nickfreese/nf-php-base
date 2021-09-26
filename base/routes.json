@@ -1,6 +1,9 @@
 {
     "web_test_index":{
 
+    	"action":"src\\Framework\\Action\\WebAction",
+        "response":"src\\Framework\\Response\\WebResponse"
+
     },
     "web_api_test":{
 
