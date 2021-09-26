@@ -1,6 +1,10 @@
 ##  NF PHP Base is an Application framework, that serves as the base for your php application. 
 
 
+ - This repo is both an example and a work in progress.  Its recommended only for example purposes rather then a production application.
+
+ - Also, Its poorly documented.
+
 
 
 ## install the framework
@@ -9,9 +13,10 @@
 
 `./install.sh test-app`
 
+`docker-compose  --project-name 'test-app' up -d`
 
-docker-compose  --project-name 'test-app' up -d
 
+test website:  http://localhost/test/index
 
 
 
@@ -21,6 +26,13 @@ docker-compose  --project-name 'test-app' up -d
 `docker exec -it --user root mariadb-test-app /bin/bash`
 
 `mysql -utestuser -ptestpassword testdb`
+
+
+- Turn off docker environment
+`docker-compose -p test-app stop`
+
+- Turn env back on:
+`docker-compose -p test-app start`
 
 
 
@@ -36,9 +48,6 @@ docker-compose  --project-name 'test-app' up -d
 
 
 ## Notes
-
-
-
 
 
 
