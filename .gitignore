@@ -6,9 +6,10 @@ www/env.php
 ___www
 ___www/*
 src/etc/env.php
-Dockerfile-apache.dev
 run.sh
+!base/run.sh
 docker-compose.yml
+!base/docker-compose.yml
 bin/app.php
 pub/media/app.js
 pub/index.php

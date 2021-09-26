@@ -1,0 +1,36 @@
+version: '3'
+services:
+    php-apache-nfdefault:
+        depends_on:
+            - mariadb-nfdefault
+        build:
+            context: ./
+            dockerfile: Dockerfile-apache.dev
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www/html/:z
+        links:
+            - 'mariadb-nfdefault'
+
+    mailhog-nfdefault:
+      image: mailhog/mailhog:v1.0.0
+      ports:
+        - "1025:1025"
+        - "8025:8025"
+
+    mariadb-nfdefault:
+        image: mariadb:10.1
+        container_name: mariadb-nfdefault
+        volumes:
+            - mariadb-nfdefault:/var/lib/mysql
+        environment:
+            TZ: "America/New_York"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "rootpwd"
+            MYSQL_USER: 'testuser'
+            MYSQL_PASSWORD: 'testpassword'
+            MYSQL_DATABASE: 'testdb'
+
+volumes:
+    mariadb-nfdefault:
