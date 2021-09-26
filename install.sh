@@ -28,8 +28,8 @@ if [ $# -eq 0 ]
 
   	echo "using new name: $1"
 
-    sed -i -e 's/nfdefault/$1/g' docker-compose.yml
-    sed -i -e 's/nfdefault/$1/g' run.sh
+    sed -i -e "s/nfdefault/$1/g" docker-compose.yml
+    sed -i -e "s/nfdefault/$1/g" run.sh
 
     rm -rf docker-compose.yml-e
     rm -rf run.sh-e
@@ -42,4 +42,6 @@ echo "NF PHP Base installed."
 echo "Application Name: $1"
 echo "See README.md for usage and setup details." 
 
-echo "run \"docker-compose up -d\" to install dev env"
+echo "run:"
+echo "\"docker-compose  --project-name '$1' up -d\""
+echo "to install dev env"

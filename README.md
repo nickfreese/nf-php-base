@@ -7,7 +7,10 @@
 
 `chmod +x install.sh`
 
-`./install.sh "test-app"`
+`./install.sh test-app`
+
+
+docker-compose  --project-name 'test-app' up -d
 
 
 
@@ -24,10 +27,10 @@
 ## use the application
 
 - run the app:
-`./run.sh "php bin/app.php`
+`./run.sh "php bin/app.php"`
 
 - test routing:
-`./run.sh "php bin/ps.php admin:test"`
+`./run.sh "php bin/app.php admin:test"`
 
 
 
