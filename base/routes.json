@@ -1,0 +1,14 @@
+{
+    "web_test_index":{
+
+    },
+    "web_api_test":{
+
+    },
+    "cli_admin_test":{
+
+        "action":"src\\Framework\\Action\\Action",
+        "response":"src\\Framework\\Response\\Response"
+
+    }
+}
