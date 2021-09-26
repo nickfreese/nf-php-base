@@ -5,6 +5,8 @@
 
 ## install the framework
 
+`chmod +x install.sh`
+
 `./install.sh "test-app"`
 
 
